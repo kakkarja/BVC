@@ -10,4 +10,5 @@ Please watch the demo https://youtu.be/7vXsZiRiRDI thank you.**
 It is free bible software and can be downloaded in http://www.e-sword.net. 
 In the demo you can see it copy and paste one verse at a time. 
 Now it can copy several verses and paste them all at once and create 
-multiple entry records of verses. Enjoy and GBU.**
+multiple entry records of verses. Please see the screenshots https://github.com/kakkarja/BVC/wiki. 
+Enjoy and GBU.**
