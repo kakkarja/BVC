@@ -463,8 +463,6 @@ i = 0
 Fx2
 End Sub
 
-
-
 Private Sub MultiPage1_Change()
     If MultiPage1.SelectedItem.Name = "page1" Then
         If Not ActiveCell = "" Then
@@ -473,16 +471,27 @@ Private Sub MultiPage1_Change()
             Renungan.Locked = True
             Renungan = ActiveCell.Offset(, 1).Value
         End If
+        Ayat.SetFocus
     Else
         If Not ActiveCell.Offset(, 1).Comment Is Nothing Then
             Catatan.Locked = True
             Catatan = ActiveCell.Offset(, 1).Comment.Text
         Else
-            Catatan = ""
+            If Catatan.Locked = True Then
+                Catatan.Locked = False
+                Catatan = ""
+            Else
+                Catatan = ""
+            End If
+        End If
+        On Error Resume Next
+        Catatan.SetFocus
+        If Err.Number <> 0 Then
+            Ayat.SetFocus
+            On Error GoTo 0
         End If
     End If
 End Sub
-
 Private Sub NumberR_Change()
     NumberR.Locked = True
     SpinButton2.Value = NumberR.Text
